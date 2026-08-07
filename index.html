@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Transilvania | Evelyn Lagla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Cinzel:wght@600;700&family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="scene-bg">
+  <div class="sky"></div>
+  <div class="stars"></div>
+  <div class="moon"></div>
+  <div class="mountains"></div>
+  <div class="castle-silhouette"></div>
+</div>
+<div class="bat-sky" id="batSky"></div>
+<div class="fog"></div>
+<div class="lightning" id="lightning"></div>
+
+<header>
+  <div class="brand display">Hotel Transylvania</div>
+  <div class="nav-wrap">
+    <nav class="batnav" id="mainNav">
+      <button class="bat-btn active" data-page="inicio"><span class="icon">🦇</span><span class="label">Inicio</span></button>
+      <button class="bat-btn" data-page="biografia"><span class="icon">🦇</span><span class="label">Biografía</span></button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= INICIO ================= -->
+  <section id="inicio" class="page active">
+
+    <div class="hero-columns">
+      <div class="frame-wrap">
+        <div class="photo-frame" id="photoFrame">
+          <img id="photoImg" src="foto-evelyn.jpg" alt="Foto de Evelyn Anahi" style="display:block;">
+          <div class="hint" id="photoHint" style="display:none;">📷<br>Coloca aquí tu fotografía</div>
+          <button class="upload-btn" id="uploadBtn" style="position:absolute; bottom:10px; left:50%; transform:translateX(-50%); z-index:3;">Cambiar imagen</button>
+          <input type="file" id="fileInput" accept="image/*" style="display:none">
+        </div>
+      </div>
+      <div class="hero-text">
+        <p class="eyebrow">¡Bienvenido!</p>
+        <h1>Soy Evelyn Anahi</h1>
+        <p class="sub">Estudiante de Ingeniería en Software, responsable, organizada y comprometida con cada reto que emprendo. Este es mi Hotel Transilvania: un espacio donde la programación y los monstruos se llevan increíble 🧛‍♀️</p>
+        <button class="big-btn" onclick="goTo('biografia')">🦇 Conoce más sobre mí</button>
+      </div>
+    </div>
+
+    <div class="home-grid">
+      <div class="home-card">
+        <span class="monster">🧛</span>
+        <h3>Unidad 1</h3>
+        <p>Fundamentos, sistemas de numeración y álgebra de Boole.</p>
+        <button class="ver-mas" onclick="goTo('unidades'); showUnitTab(1);">Ver más</button>
+      </div>
+      <div class="home-card">
+        <span class="monster">🧟</span>
+        <h3>Unidad 2</h3>
+        <p>Algoritmos, diagramas de flujo, pseudocódigo y modelado.</p>
+        <button class="ver-mas" onclick="goTo('unidades'); showUnitTab(2);">Ver más</button>
+      </div>
+      <div class="home-card">
+        <span class="monster">🐺</span>
+        <h3>Unidad 3</h3>
+        <p>Lenguajes, Python, operadores y estructuras de control.</p>
+        <button class="ver-mas" onclick="goTo('unidades'); showUnitTab(3);">Ver más</button>
+      </div>
+      <div class="home-card">
+        <span class="monster">👻</span>
+        <h3>Avance</h3>
+        <p>Revisa tu progreso y califica cada unidad con estrellas.</p>
+        <button class="ver-mas" onclick="goTo('avance')">Ver más</button>
+      </div>
+      <div class="home-card wide">
+        <span class="monster">🎃</span>
+        <h3>Juego</h3>
+        <p>Diviértete con un juego temático de Hotel Transilvania.</p>
+        <button class="ver-mas" onclick="goTo('juego')">Jugar ahora</button>
+      </div>
+      <div class="home-card wide">
+        <span class="monster">🧙‍♀️</span>
+        <h3>Contacto</h3>
+        <p>¿Tienes dudas? ¡Escríbeme!</p>
+        <button class="ver-mas" onclick="goTo('contacto')">Contactar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BIOGRAFIA ================= -->
+  <section id="biografia" class="page">
+    <h2><span class="section-monster">🧛‍♀️</span>Biografía</h2>
+    <p class="lead">Un poco sobre mí</p>
+    <div class="bio-grid">
+      <div class="bio-desc">
+        <p>Soy una persona responsable, organizada y comprometida con cada actividad que realizo. Me caracterizo por aprender con rapidez, trabajar en equipo y mantener una actitud positiva ante los retos. Actualmente estudio Ingeniería en Software y busco fortalecer mis conocimientos y habilidades para crecer tanto personal como profesionalmente.</p>
+      </div>
+      <div class="bio-data">
+        <h3>🧛 Datos personales</h3>
+        <ul>
+          <li><b>Nombre completo</b><span>Evelyn Anahi Lagla Chicaiza</span></li>
+          <li><b>Edad</b><span>18 años</span></li>
+          <li><b>Ciudad</b><span>Latacunga</span></li>
+          <li><b>Provincia</b><span>Cotopaxi</span></li>
+          <li><b>Correo electrónico</b><span>evelynlagla25@gmail.com</span></li>
+          <li><b>Nacimiento</b><span>26 de noviembre del 2007</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= UNIDADES ================= -->
+  <section id="unidades" class="page">
+    <button class="back-home" onclick="goTo('inicio')">⟵ Volver a Inicio</button>
+    <h2><span class="section-monster">🧟</span>Unidades</h2>
+    <p class="lead">Toca un murciélago 🦇 para descubrir cada tema</p>
+
+    <div class="unit-tabs">
+      <button class="unit-tab active" data-unit="1">Unidad 1</button>
+      <button class="unit-tab" data-unit="2">Unidad 2</button>
+      <button class="unit-tab" data-unit="3">Unidad 3</button>
+    </div>
+
+    <!-- Unidad 1: acordeón -->
+    <div class="unit-block active" id="unitBlock1">
+      <div id="accordionU1"></div>
+    </div>
+
+    <!-- Unidad 2: tarjetas -> modal -->
+    <div class="unit-block" id="unitBlock2">
+      <div class="topic-grid" id="gridU2"></div>
+    </div>
+
+    <!-- Unidad 3: tarjetas -> modal -->
+    <div class="unit-block" id="unitBlock3">
+      <div class="topic-grid" id="gridU3"></div>
+    </div>
+  </section>
+
+  <!-- ================= AVANCE ================= -->
+  <section id="avance" class="page">
+    <button class="back-home" onclick="goTo('inicio')">⟵ Volver a Inicio</button>
+    <h2><span class="section-monster">👻</span>Avance</h2>
+    <p class="lead">Marca con estrellas 🌟 tu nivel de avance en cada unidad</p>
+    <div id="avanceList"></div>
+  </section>
+
+  <!-- ================= CONTACTO ================= -->
+  <section id="contacto" class="page">
+    <button class="back-home" onclick="goTo('inicio')">⟵ Volver a Inicio</button>
+    <h2><span class="section-monster">🧙‍♀️</span>Contacto</h2>
+    <p class="lead">¿Quieres comunicarte conmigo?</p>
+    <div class="contact-card">
+      <ul>
+        <li><span class="ic">🧛‍♀️</span><span>Evelyn Anahi Lagla Chicaiza</span></li>
+        <li><span class="ic">📞</span><span>09 5377991</span></li>
+        <li><span class="ic">✉️</span><span>evelynlagla25@gmail.com</span></li>
+        <li><span class="ic">📍</span><span>Latacunga, Cotopaxi - Ecuador</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= JUEGO ================= -->
+  <section id="juego" class="page">
+    <button class="back-home" onclick="goTo('inicio')">⟵ Volver a Inicio</button>
+    <h2><span class="section-monster">🎃</span>Juego</h2>
+    <p class="lead">Escapa del Hotel Transilvania respondiendo correctamente</p>
+    <div class="game-wrap">
+      <div id="gameStart">
+        <p>🦇 Drácula te reta a demostrar lo aprendido en las 3 unidades. ¿Aceptas el reto?</p>
+        <button class="big-btn" id="startGameBtn">Comenzar juego</button>
+      </div>
+      <div id="gamePlay" style="display:none;">
+        <div class="game-progress" id="gameProgress"></div>
+        <div id="gameQuestion"></div>
+        <div id="gameOptions"></div>
+      </div>
+      <div id="gameResult" style="display:none;"></div>
+    </div>
+  </section>
+
+</main>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box" id="modalBox"></div>
+</div>
+
+<footer>🦇 Hotel Transilvania · Proyecto académico de Evelyn Anahi Lagla Chicaiza · Ingeniería en Software 🦇</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
